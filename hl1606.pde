@@ -1,3 +1,7 @@
+
+/* Requires the LEDStrip library from http://code.google.com/p/ledstrip/ ! */
+// This is just basic demo code, we're still working on it :)
+
 #include "LEDStrip.h"
 
 // dot is S
