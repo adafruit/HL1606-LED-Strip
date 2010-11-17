@@ -5,6 +5,8 @@ there is a fading ability, its not that useful)
 
 We have a few examples of using the setLEDcolor() and writeStrip() command that will 
 allow changing the strip around
+
+public domain
 */
 
 
