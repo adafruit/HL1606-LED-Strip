@@ -72,7 +72,9 @@ class HL1606strip
     uint8_t *_leds;
     uint8_t _numLEDs;
   public:
+
     HL1606strip(int, int, int, int, uint8_t);
+    HL1606strip(int, int, int, uint8_t);
 
     // some higher level commands we added
     void setLEDcolor(uint8_t n, uint8_t color);

@@ -35,6 +35,33 @@
 #include "HL1606strip.h"
 
 
+HL1606strip::HL1606strip(int dPin, int latchPin, int clkPin, uint8_t numLEDs)
+{
+  _dPin = dPin;
+  _sPin = 255;
+  _latchPin = latchPin;
+  _clkPin = clkPin;
+  _faderEnabled = 0;
+
+  // how many in the string
+  _numLEDs = numLEDs;
+  _leds = (uint8_t *)malloc(numLEDs);
+
+  for (uint8_t i=0; i<numLEDs; i++) {
+    setLEDcolor(i, BLACK);
+  }
+
+  digitalWrite(_dPin, LOW);
+  pinMode(_dPin, OUTPUT);
+  digitalWrite(_sPin, LOW);
+  pinMode(_sPin, OUTPUT);
+  digitalWrite(_latchPin, LOW);
+  pinMode(_latchPin, OUTPUT);
+  digitalWrite(_clkPin, LOW);
+  pinMode(_clkPin, OUTPUT);
+}
+
+
 HL1606strip::HL1606strip(int dPin, int sPin, int latchPin, int clkPin, uint8_t numLEDs)
 {
   _dPin = dPin;
@@ -60,6 +87,7 @@ HL1606strip::HL1606strip(int dPin, int sPin, int latchPin, int clkPin, uint8_t n
   digitalWrite(_clkPin, LOW);
   pinMode(_clkPin, OUTPUT);
 }
+
 
 void HL1606strip::sleep()
 {

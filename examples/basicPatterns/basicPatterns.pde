@@ -13,16 +13,16 @@ public domain
 // HL1606strip is an adaptation of LEDstrip from  http://code.google.com/p/ledstrip/
 #include "HL1606strip.h"
 
-#define STRIP_S 12
-#define STRIP_D 11
-#define STRIP_C 13
-#define STRIP_L 10
+// use -any- 3 pins!
+#define STRIP_D 4
+#define STRIP_C 3
+#define STRIP_L 2
 
 // Pin S is not really used in this demo since it doesnt use the built in PWM fade
 // The last argument is the number of LEDs in the strip. Each chip has 2 LEDs, and the number
 // of chips/LEDs per meter varies so make sure to count them! if you have the wrong number
 // the strip will act a little strangely, with the end pixels not showing up the way you like
-HL1606strip strip = HL1606strip(STRIP_D, STRIP_S, STRIP_L, STRIP_C, 32);
+HL1606strip strip = HL1606strip(STRIP_D, STRIP_L, STRIP_C, 32);
 
 
 void setup(void) {
@@ -33,25 +33,25 @@ void loop(void) {
    // first argument is the color, second is the delay in milliseconds between commands
    
    // test all the LED colors with a wipe
-   colorWipe(RED, 20);
-   colorWipe(YELLOW, 20);
-   colorWipe(GREEN, 20);
-   colorWipe(TEAL, 20);
-   colorWipe(BLUE, 20);
-   colorWipe(VIOLET, 20);
-   colorWipe(WHITE, 20);
-   colorWipe(BLACK, 20);
+   colorWipe(RED, 40);
+   colorWipe(YELLOW, 40);
+   colorWipe(GREEN, 40);
+   colorWipe(TEAL, 40);
+   colorWipe(BLUE, 40);
+   colorWipe(VIOLET, 40);
+   colorWipe(WHITE, 40);
+   colorWipe(BLACK, 40);
 
    // then a chase
-   chaseSingle(RED, 20);
-   chaseSingle(YELLOW, 20);
-   chaseSingle(GREEN, 20);
-   chaseSingle(TEAL, 20);
-   chaseSingle(VIOLET, 20);
-   chaseSingle(WHITE, 20);
+   chaseSingle(RED, 40);
+   chaseSingle(YELLOW, 40);
+   chaseSingle(GREEN, 40);
+   chaseSingle(TEAL, 40);
+   chaseSingle(VIOLET, 40);
+   chaseSingle(WHITE, 40);
    
    // a colorcycle party!
-   rainbowParty(40);
+   rainbowParty(60);
 }
 
 
