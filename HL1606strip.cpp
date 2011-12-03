@@ -29,9 +29,13 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <WProgram.h>
-#include <avr/io.h>
-#include "wiring.h"
+#if ARDUINO >= 100
+ #include "Arduino.h"
+#else
+ #include "WProgram.h"
+ #include "avr/io.h"
+ #include "wiring.h"
+#endif
 #include "HL1606strip.h"
 
 
